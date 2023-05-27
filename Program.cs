@@ -1,41 +1,79 @@
 ﻿using System;
 
-namespace P02Divisions
+namespace P03Vacation
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int num = int.Parse(Console.ReadLine());
+            int count = int.Parse(Console.ReadLine());
+            string typeGroup = Console.ReadLine();
+            string weekDay = Console.ReadLine();
 
-            if (num % 10 == 0)
-            {
-                Console.WriteLine("The number is divisible by 10");
+            float totalMoney = 0f;
+            float pricePerPerson = 0f;
 
-            }
-            else if (num % 7 == 0)
+            switch (typeGroup)
             {
-                Console.WriteLine("The number is divisible by 7");
-
+                case "Students":
+                    switch (weekDay)
+                    {
+                        case "Friday":
+                            pricePerPerson = 8.45f;
+                            break;
+                        case "Saturday":
+                            pricePerPerson = 9.8f;
+                            break;
+                        case "Sunday":
+                            pricePerPerson = 10.46f;
+                            break;
+                    }
+                    totalMoney = count * pricePerPerson;
+                    if (count >= 30)
+                    {
+                        totalMoney -= (totalMoney * 15) / 100;
+                    }
+                    break;
+                case "Business":
+                    switch (weekDay)
+                    {
+                        case "Friday":
+                            pricePerPerson = 10.9f;
+                            break;
+                        case "Saturday":
+                            pricePerPerson = 15.6f;
+                            break;
+                        case "Sunday":
+                            pricePerPerson = 16f;
+                            break;
+                    }
+                    if (count >= 100)
+                    {
+                        count -= 10;
+                    }
+                    totalMoney = count * pricePerPerson;
+                    break;
+                case "Regular":
+                    switch (weekDay)
+                    {
+                        case "Friday":
+                            pricePerPerson = 15f;
+                            break;
+                        case "Saturday":
+                            pricePerPerson = 20f;
+                            break;
+                        case "Sunday":
+                            pricePerPerson = 22.5f;
+                            break;
+                    }
+                    if (count >= 10 && count <= 20)
+                    {
+                        totalMoney -= (totalMoney * 5) / 100;
+                    }
+                    totalMoney = count * pricePerPerson;
+                    break;
             }
-            else if (num % 6 == 0)
-            {
-                Console.WriteLine("The number is divisible by 6");
-
-            }
-            else if (num % 3 == 0)
-            {
-                Console.WriteLine("The number is divisible by 3");
-
-            }
-            else if (num % 2 == 0)
-            {
-                Console.WriteLine("The number is divisible by 2");
-            }
-            else 
-            {
-                Console.WriteLine("Not divisible");
-            }
+            Console.WriteLine($"Total price: {totalMoney:F2}");
         }
     }
 }

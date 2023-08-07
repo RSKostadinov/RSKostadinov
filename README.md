@@ -1,7 +1,7 @@
-- 👋 Hi, I’m @RSKostadinov
+- 👋 Hi, I’m @RSKostadinov, but you can call me Rado:)!
 - 👀 I’m interested in Coding and Photography
 - 🌱 I’m currently learning Programming Fundamentals with C#
-- 📫 How to reach me IG: @kostadinov.photography; @rado.s.kostadinov
+- 📫 How to reach me IG: @kostadinovphotography; @rado.s.kostadinov
 
 <!---
 RSKostadinov/RSKostadinov is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
